@@ -10,8 +10,8 @@ public class CarEnter : MonoBehaviour
     public Transform Player;
 
     [Header("Cameras")]
-    public GameObject PlayerCam;
-    public GameObject CarCam;
+    public GameObject PlayerCamera;
+    public GameObject CarCamera;
 
     public GameObject DriveUi;
 
@@ -21,27 +21,31 @@ public class CarEnter : MonoBehaviour
     {
         CarController.enabled = false;
         DriveUi.gameObject.SetActive(false);
-        CarCam.gameObject.SetActive(false);
+        CarCamera.gameObject.SetActive(false);
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && Candrive)
+        if (Input.GetKeyDown(KeyCode.E) && Candrive)
         {
-            CarController.enabled = true; // After you click f you enter the car
+
+            CarController.enabled = true;
             DriveUi.gameObject.SetActive(false);
             Player.transform.SetParent(Car);
             Player.gameObject.SetActive(false);
-            PlayerCam.gameObject.SetActive(false);
-            CarCam.gameObject.SetActive(true);
+            PlayerCamera.gameObject.SetActive(false);
+            CarCamera.gameObject.SetActive(true);
+
         }
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.F))
+
         {
-            CarController.enabled = false; // After you press g you exit the car
+
+            CarController.enabled = false;
             Player.transform.SetParent(null);
             Player.gameObject.SetActive(true);
-            // Here If Player Is Not Driving So PlayerCamera turn On and Car Camera turn off
-            PlayerCam.gameObject.SetActive(true);
-            CarCam.gameObject.SetActive(false);
+            PlayerCamera.gameObject.SetActive(true);
+            CarCamera.gameObject.SetActive(false);
+
         }
     }
     void OnTriggerStay(Collider col)
