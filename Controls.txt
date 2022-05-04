@@ -1,0 +1,11 @@
+WASD to move in car and out of car
+Space to jump
+E to get in car
+F to leave car
+F1 for button 1 on quiz
+F2 for button 2 on quiz
+F3 for button 3 on quiz
+
+If not in igloo use mouse to look around
+
+And to exit leave at the exit door
